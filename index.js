@@ -5,13 +5,12 @@ con alguno de nuestros metodos
 
 // EJERCICIO 1
 
-let titulo1 = document.querySelector('h5');
+let titulo1 = document.querySelector('.card1');
+let titulo2 = document.querySelector('.card2');
+let titulo3 = document.querySelector('.card3');
+
 titulo1.style.color = 'red';
-
-let titulo2 = document.querySelector('.dos');
 titulo2.style.color = 'blue';
-
-let titulo3 = document.querySelector('.tres');
 titulo3.style.color = 'green';
 
 
@@ -41,15 +40,14 @@ boton.onclick = function () {
 
 // EJERCICIO 4
 
+let familia=document.querySelector(".container_simpsons");
 let simpsons = ["Homer", "Marge", "Bart", "Lisa", "Maggie"];
 
-for (let i = 0; i < simpsons.length; i++) {
-    let div=document.querySelector(".container_simpsons");
-    let parrafo=document.createElement("p");
-    div.appendChild(parrafo);
-    parrafo.innerHTML= simpsons[i];      
-}
-
+simpsons.forEach(dato=>{
+    let p=document.createElement("p");
+    p.innerHTML= dato; 
+    familia.appendChild(p);
+});
 
 /* 1. creamos un array para guardar nuestros objetos.
 2. creamos nuestros 4 objetos
@@ -60,3 +58,57 @@ y le asignamos el #
 7. creamos una variable le asignamos el metodo .createElement con un div
 8. insertamos el div dentro de nuestro contenedor con el metodo .appendChild
 9. a nuestro div le asignamos el metodo innerHTML y utilizamos las cards de boostrap `y usar ${dato.}`*/
+
+// EJERCICIO 5
+let producto=[
+    {
+        nombre: "producto 1",
+        precio: 1,
+        tienda: "carrefour",
+        boton: "saber mas",
+        img: ""
+    },
+    {
+        nombre: "producto 2",
+        precio: 2,
+        tienda: "mercadona",
+        boton: "saber mas",
+        img: ""
+    },
+    {
+        nombre: "producto 3",
+        precio: 3,
+        tienda: "lidl",
+        boton: "saber mas",
+        img: ""
+    },
+    {
+        nombre: "producto 4",
+        precio: 4,
+        tienda: "aldi",
+        boton: "saber mas",
+        img: ""
+    }
+]
+
+producto.forEach(dato=>{
+    let cards=document.querySelector('#div_html');
+    let div_js =document.createElement('div');
+    cards.appendChild(div_js);
+
+    div_js.innerHTML=`
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${dato.nombre} </h5>
+          <p class="card-text">Precio: ${dato.precio} </p>
+          <p class="card-text">Tienda: ${dato.tienda} </p>
+          <a href="#" class="btn btn-primary">${dato.boton} </a>
+        </div>
+      </div>    
+    `
+});
+
+
+
+
