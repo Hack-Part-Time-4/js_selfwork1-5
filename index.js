@@ -25,7 +25,49 @@ le decimos que nos retorne un log hola.*/
 let boton=document.querySelector('#boton');
 boton.onclick = function () {
     alert("Hola");  
-}
+};
+
+// EJERCICIO 3
+/* asignamos un id a cada estrella. hacer el llamado del id y almacenarlo en una variable, añadirle a esa variable
+el evento onclic, al hacer clic el background debe cambiar a rojo. si se clica una estrella, ella y las anteriores deben colorearse
+en amarillo */
+
+let estrella1=document.querySelector('#estrella1');
+let estrella2=document.querySelector('#estrella2');
+let estrella3=document.querySelector('#estrella3');
+let estrella4=document.querySelector('#estrella4');
+let estrella5=document.querySelector('#estrella5');
+
+estrella1.onclick=function () {
+    estrella1.style.color='red';    
+};
+
+estrella2.onclick=function () {
+    estrella1.style.color='red';
+    estrella2.style.color='red';    
+    
+};
+
+estrella3.onclick=function () {
+    estrella1.style.color='red';
+    estrella2.style.color='red';
+    estrella3.style.color='red';
+};
+
+estrella4.onclick=function () {
+    estrella1.style.color='red';
+    estrella2.style.color='red';
+    estrella3.style.color='red';
+    estrella4.style.color='red';
+};
+
+estrella5.onclick=function () {
+    estrella1.style.color='red';
+    estrella2.style.color='red';
+    estrella3.style.color='red';
+    estrella4.style.color='red';
+    estrella5.style.color='red';  
+};
 
 
 /* 1. creamos un array y guardamos a los integrantes de la familia
@@ -108,6 +150,36 @@ producto.forEach(dato=>{
       </div>    
     `
 });
+
+
+//EJERCICIO 6
+/* Crea un input en el que todo lo que escribas, se refleje en
+otra parte mediante el uso del evento input de javascript */
+
+/*Creo div, input y boton con sus respectivos id, en js llamo esos id y los asignos a variables
+creo una variable que almacene el valor del input, creo un parrafo, agrego el valor del input al parrafo
+con innerhtml, agrego el parrafo al html con appendChild */
+
+let div_input=document.getElementById('div_input')
+let input=document.getElementById('input');
+let btn_input=document.querySelector('#btn_input');
+
+btn_input.addEventListener('click', ()=>{
+    let valor = input.value;
+    let p=document.createElement('p');
+    p.innerHTML=`${valor}`;
+    div_input.appendChild(p);
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
