@@ -5,13 +5,11 @@ con alguno de nuestros metodos
 
 // EJERCICIO 1
 
-let titulo1 = document.querySelector('.card1');
-let titulo2 = document.querySelector('.card2');
-let titulo3 = document.querySelector('.card3');
+let color_title=document.querySelectorAll('.color-title');
 
-titulo1.style.color = 'red';
-titulo2.style.color = 'blue';
-titulo3.style.color = 'green';
+color_title.forEach(titles => {
+    titles.style.color='red';
+});
 
 
 /* 1. creamos el boton en  nuestro documento html y le asignamos un id
@@ -30,7 +28,7 @@ boton.onclick = function () {
 // EJERCICIO 3
 /* asignamos un id a cada estrella. hacer el llamado del id y almacenarlo en una variable, añadirle a esa variable
 el evento onclic, al hacer clic el background debe cambiar a rojo. si se clica una estrella, ella y las anteriores deben colorearse
-en amarillo */
+en amarillo 
 
 let estrella1=document.querySelector('#estrella1');
 let estrella2=document.querySelector('#estrella2');
@@ -68,6 +66,26 @@ estrella5.onclick=function () {
     estrella4.style.color='red';
     estrella5.style.color='red';  
 };
+*/
+
+//EJERCICIO 3 SEGUNDA SOLUCION
+
+function calificar(item) {
+    //console.log(item);
+    
+    let cont = parseInt(item.id[4]);
+  
+    //console.log(cont);
+  
+    for (let i = 0; i < 5; i++) {
+      if (i < cont) {
+        document.getElementById(`star` + `${i+1}`).style.color = 'orange';
+      } else {
+        document.getElementById(`star` + `${i+1}`).style.color = 'black';
+      }
+    };
+  };
+  
 
 
 /* 1. creamos un array y guardamos a los integrantes de la familia
